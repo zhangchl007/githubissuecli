@@ -11,3 +11,4 @@ crash.log
 
 # ignore config file
 *.yaml
+!config/issue_template.yaml
