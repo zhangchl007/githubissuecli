@@ -21,7 +21,7 @@ type Issues struct {
     HTMLURL string `json:"html_url"`
     Title string
     State string
-    Lockstatus bool
+    Locked bool
     Assignees *[]Assignees
     CreateAt time.Time `json:"created_at"`
     Body string
