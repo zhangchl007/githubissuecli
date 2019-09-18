@@ -80,7 +80,7 @@ func (yamlfile *Issueyamlfile) UpdateIssueyaml(Title, Body, State string, Locked
    }
    WriteToFile(tmpfile, d)
    MoveFile(tmpfile, TemplateFile)
-   fmt.Printf("The yaml file of issue template: %s had been created succesfully!\n",TemplateFile)
+   fmt.Printf("The yaml file of issue template: %s had been created/updated succesfully!\n",TemplateFile)
    //yaml to json for issue creation
    y2 := []byte(string(d))
    j2, err := y2j.YAMLToJSON(y2)

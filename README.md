@@ -1,5 +1,6 @@
 #gcli is a CLI tool for Github repositories and issues management,
-#which will be improving continiously as the awesome tool!
+which will be improving continiously as the awesome tool!
+
 #Set userinfo
 
 gcli set  -u username -t token -r repo

@@ -11,6 +11,9 @@ func Parsehttpurl(Filepath, State, IssueNumber string, Locked bool) (string, str
         url = IssuesURL + Userid + "/" + Repo + "/issues"
         Action = MethodPost
         data = ReadTemplate(Filepath)
+    } else if Filepath == "" {
+        url = IssuesURL + Userid + "/" + Repo + "/issues/" + IssueNumber
+        Action = MethodPatch
     } else if State == "closed" && len(IssueNumber) > 0 {
         url = IssuesURL + Userid + "/" + Repo + "/issues/" + IssueNumber
         Action = MethodPatch

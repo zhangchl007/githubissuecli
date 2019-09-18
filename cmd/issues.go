@@ -97,8 +97,11 @@ var updateissueCmd = &cobra.Command{
 which will be improving continiously as the awesome tool`,
     //Args: cobra.MinimumNArgs(1),
     Run: func(cmd *cobra.Command, args []string) {
-      Filepath := "src/github.com/zhangchl007/githubissuecli/config/issue_template.yaml"
-      PersonalAccessToken, url, Action, data := github.Parsehttpurl(Filepath, "null", IssueNumber, false)
+      var  yamlfile *github.Issueyamlfile
+      myid := []string{Owner}
+      mylabels := []string{Label}
+      PersonalAccessToken, url, Action, _ := github.Parsehttpurl("", "", IssueNumber,false)
+      data, _, _:= yamlfile.UpdateIssueyaml(Title, Body, State, Locked, &myid, &mylabels)
       okay := github.UpdateIssues(PersonalAccessToken, url, Action, data)
       fmt.Println(okay)
     },
@@ -119,4 +122,8 @@ func init() {
     unlockissueCmd.MarkFlagRequired("IssueNumber")
     updateissueCmd.Flags().StringVarP(&IssueNumber, "IssueNumber", "n", "0", "The issue Number")
     updateissueCmd.MarkFlagRequired("IssueNumber")
+    updateissueCmd.Flags().StringVarP(&Title, "Title", "t", "my issue", "The subject of your issue")
+    updateissueCmd.Flags().StringVarP(&Body, "Body", "b", "This is my issue", "The discription of your issue")
+    updateissueCmd.Flags().StringVarP(&Owner, "Owner", "u", "", "Assign the issue to the owner")
+    updateissueCmd.MarkFlagRequired("Body")
 }
