@@ -12,8 +12,8 @@ var Locked bool
 
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "Create the yaml template of issue!",
-	Long: `Create the yaml template of issue!, gcli is a CLI tool for Github repositories and issues management,
+	Short: "Create the repo/issue and the yaml file of issue template",
+	Long: `Create the repo/issue and the yaml file of issue template, gcli is a CLI tool for Github repositories and issues management,
 which will be improving continiously as the awesome tool!`,
 	Run: func(cmd *cobra.Command, args []string) {
         var  yamlfile *github.Issueyamlfile

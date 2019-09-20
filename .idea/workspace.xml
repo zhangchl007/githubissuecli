@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a4e7fb91-f931-4493-b494-220eb0cbe7f1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pkg/github/confighandle_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/create.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/create.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/delete.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/delete.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/issues.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/issues.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/update.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/update.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/usage.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/usage.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/github/confighandle.go.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/github/readtemplate.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/github/readtemplate.go" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/github/issuehandle_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="160" column="29" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="30" />
+              <folding>
+                <element signature="e#15#232#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/github/confighandle_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="928">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="e#15#109#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pkg/github/urlrequestparse_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
+              <folding>
+                <element signature="e#15#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/github/urlrequestparse.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/github/readtemplate_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="11" column="85" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="86" />
+              <folding>
+                <element signature="e#15#98#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/github/confighandle.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="29" column="20" selection-end-line="43" />
+              <folding>
+                <element signature="e#15#109#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pkg/github/readtemplate.go" />
+        <option value="$PROJECT_DIR$/pkg/github/confighandle.go.bak" />
+        <option value="$PROJECT_DIR$/pkg/github/confighandle_test.go" />
+        <option value="$PROJECT_DIR$/pkg/github/readtemplate_test.go" />
+        <option value="$PROJECT_DIR$/pkg/github/issuehandle_test.go" />
+        <option value="$PROJECT_DIR$/pkg/github/urlrequestparse_test.go" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/githubissuecli.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="844" />
+    <option name="y" value="226" />
+    <option name="width" value="1396" />
+    <option name="height" value="825" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="githubissuecli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="githubissuecli" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="githubissuecli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="githubissuecli" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="githubissuecli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="githubissuecli" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="githubissuecli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="githubissuecli" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pkg/github" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pkg/github" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="githubissuecli" />
+      <working_directory value="$PROJECT_DIR$/pkg/github" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/zhangchl007/githubissuecli/pkg/github" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestGetIssues$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TestHistory">
+    <history-entry file="TestGetIssues_in_github_com_zhangchl007_githubissuecli_pkg_github - 2019.09.20 at 21h 33m 52s.xml">
+      <configuration name="TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGetIssues_in_github_com_zhangchl007_githubissuecli_pkg_github - 2019.09.20 at 21h 35m 04s.xml">
+      <configuration name="TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGetIssues_in_github_com_zhangchl007_githubissuecli_pkg_github - 2019.09.20 at 21h 39m 53s.xml">
+      <configuration name="TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGetIssues_in_github_com_zhangchl007_githubissuecli_pkg_github - 2019.09.20 at 22h 12m 05s.xml">
+      <configuration name="TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGetIssues_in_github_com_zhangchl007_githubissuecli_pkg_github - 2019.09.20 at 22h 19m 35s.xml">
+      <configuration name="TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGetIssues_in_github_com_zhangchl007_githubissuecli_pkg_github - 2019.09.20 at 22h 21m 31s.xml">
+      <configuration name="TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGetIssues_in_github_com_zhangchl007_githubissuecli_pkg_github - 2019.09.20 at 22h 22m 32s.xml">
+      <configuration name="TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGetIssues_in_github_com_zhangchl007_githubissuecli_pkg_github - 2019.09.20 at 22h 23m 58s.xml">
+      <configuration name="TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGetIssues_in_github_com_zhangchl007_githubissuecli_pkg_github - 2019.09.20 at 22h 25m 25s.xml">
+      <configuration name="TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGetIssues_in_github_com_zhangchl007_githubissuecli_pkg_github - 2019.09.20 at 22h 25m 41s.xml">
+      <configuration name="TestGetIssues in github.com/zhangchl007/githubissuecli/pkg/github" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="36" width="2880" height="1584" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49771166" visible="true" weight="0.2775788" />
+      <window_info id="Structure" order="1" sideWeight="0.50228834" side_tool="true" visible="true" weight="0.2775788" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32872504" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pkg/github/issuehandle.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/github/confighandle.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="29" column="20" selection-end-line="43" />
+          <folding>
+            <element signature="e#15#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/github/confighandle.go.bak">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/github/type.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/github/readtemplate.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/github/readtemplate_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="85" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="86" />
+          <folding>
+            <element signature="e#15#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/github/urlrequestparse.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/github/confighandle_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="928">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#15#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/github/issuehandle_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="160" column="29" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="30" />
+          <folding>
+            <element signature="e#15#232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/github/urlrequestparse_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
+          <folding>
+            <element signature="e#15#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

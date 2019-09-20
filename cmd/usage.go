@@ -27,9 +27,6 @@ gcli lock issue/repo -n issuenumber
 #close issue
 gcli close issue -n issuenumber
 
-#assign the issue to owner
-gcli assign issuenumber owner
-
 #delete repo
 gcli delete repo`
 

@@ -24,15 +24,11 @@ gcli update issue/repo -n issuenumber
 
 #issue locked and public/private repo
 
-gcli lock issue/repo -n issuenumber 
+gcli lock issue -n issuenumber 
 
 #close issue
 
 gcli close issue -n issuenumber
-
-#assign the issue to owner
-
-gcli assign issuenumber owner 
 
 #delete repo
 

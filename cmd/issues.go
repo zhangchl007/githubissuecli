@@ -10,7 +10,7 @@ import (
 // issuesCmd represents the issues command
 var getissuesCmd = &cobra.Command{
 	Use:   "issues",
-    Short: "Get all the issues",
+    Short: "Get all issues of the repo",
 	Long: `Get User's all issues of the specify repository,gcli is a CLI tool for Github repositories and issues management,
 which will be improving continiously as the awesome tool!`,
 	Run: func(cmd *cobra.Command, args []string) {

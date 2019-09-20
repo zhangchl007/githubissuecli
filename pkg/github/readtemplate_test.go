@@ -1,12 +1,15 @@
 package github
 import (
-     "fmt"
-     "log"
-     y2j "github.com/ghodss/yaml"
-     "io/ioutil"
+	"fmt"
+	y2j "github.com/ghodss/yaml"
+	"io/ioutil"
+	"log"
+	"testing"
 )
 
-func ReadTemplate(Filepath string)([]byte) {
+func TestReadTemplate(t *testing.T) {
+
+	Filepath := "src/github.com/zhangchl007/githubissuecli/config/issue_template.yaml"
 	content, err := ioutil.ReadFile(Filepath)
 	if err != nil {
 		log.Fatal(err)
@@ -17,6 +20,5 @@ func ReadTemplate(Filepath string)([]byte) {
        fmt.Printf("err: %v\n", err)
     }
 	fmt.Printf("The post json contents: %s\n", j2)
-    return j2
 }
 
