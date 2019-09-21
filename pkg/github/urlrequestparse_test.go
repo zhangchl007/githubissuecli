@@ -2,23 +2,26 @@ package github
 
 import (
     "fmt"
+    "os"
     "testing"
 )
 
 func TestParsehttpurl(t *testing.T) {
-    Filepath := ""
+    var url string
+    var data []byte
+    GOPATH := os.Getenv("GOPATH")
+    Filepath := GOPATH + "/src/github.com/zhangchl007/githubissuecli/config/issue_template.yaml"
     IssueNumber := "100"
     s := [...]string{"GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"}
-    url := "https://api.github.com/"
-    data := []byte(`{"assignees":[],"body":"speed up golang development","labels":["bug"],"locked":false,"state":"open","title":"this issue7"}`)
+    //data := []byte(`{"assignees":[],"body":"speed up golang development","labels":["bug"],"locked":false,"state":"open","title":"this issue7"}`)
     Userid, PersonalAccessToken, Repo := GetUserinfo()
     for _, Action := range s {
-        State := "closed"
+        State := "open"
         Locked := false
         if State == "open" && Locked == false {
             url = IssuesURL + Userid + "/" + Repo + "/issues"
             Action = MethodPost
-            //data = ReadTemplate(Filepath)
+            data = ReadTemplate(Filepath)
         } else if Filepath == "" {
             url = IssuesURL + Userid + "/" + Repo + "/issues/" + IssueNumber
             Action = MethodPatch
@@ -36,7 +39,6 @@ func TestParsehttpurl(t *testing.T) {
         } else {
             fmt.Println("Please input the right parameters!")
         }
-
        fmt.Println(PersonalAccessToken, url, Action, &data)
     }
 

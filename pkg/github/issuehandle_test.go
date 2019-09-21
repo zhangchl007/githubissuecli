@@ -1,21 +1,23 @@
 package github
+
 import (
     "encoding/json"
+    //    "strings"
     "bytes"
     "fmt"
-    "os"
-    "io/ioutil"
-    "log"
-    "time"
-    "net/http"
-    "testing"
     y2j "github.com/ghodss/yaml"
     "github.com/spf13/viper"
-    yaml "gopkg.in/yaml.v2"
+    "gopkg.in/yaml.v2"
+    "io/ioutil"
+    "log"
+    "net/http"
+    "os"
+    "testing"
+    "time"
 )
 
 func TestGetIssues(t *testing.T) {
-    PersonalAccessToken := "xxxxxxxxxxxxxxxx"
+    _, PersonalAccessToken, _ := GetUserinfo()
     URL := "https://api.github.com/repos/zhangchl007/test/issues"
     Action := "GET"
     req, err := http.NewRequest(Action, URL,  nil)
@@ -52,7 +54,7 @@ func TestGetIssues(t *testing.T) {
              Number: 2,
              HTMLURL: "https://github.com/zhangchl007/test/issues/2",
              Title: "this is issue8",
-             State: "closed",
+             State: "open",
              Locked: false,
              Assignees: &[]Assignees{
                  {
@@ -72,25 +74,28 @@ func TestGetIssues(t *testing.T) {
     fmt.Println (&result)
 }
 
-func TestUpdateIssueyaml(t *testing.T){
+func (yamlfile *Issueyamlfile)TestUpdateIssueyaml(t *testing.T){
 
-    yamlfile := []struct {
+
+    /*yamlfile := []struct {
         Title     string
         Body      string
         Assignees []string
         State     string
         Locked    bool
         Labels    []string
-    } {
+    }{
         {
-            Title: "this is issue8",
-            Body:  "this is my issue, Please take care of it",
-            Assignees: []string{ "zhangchl007" },
-            State: "open",
-            Locked: false,
-            Labels: []string{ "bug" },
+            Title:     "this is issue8",
+            Body:      "this is my issue, Please take care of it",
+            Assignees: []string{"zhangchl007"},
+            State:     "open",
+            Locked:    false,
+            Labels:    []string{"bug"},
         },
-    }
+
+    }*/
+
     tmpfile := "/tmp/a.test"
     IssueTemplate :="issue_template"
     IssueyamlPath  :="../../config/"
@@ -101,22 +106,23 @@ func TestUpdateIssueyaml(t *testing.T){
     if err != nil {
         log.Fatal(err)
     }
-
     err = viper.Unmarshal(&yamlfile)
     if err != nil{
        log.Fatalf("unable to decode into struct, %v", err)
     }
+
    //viper.Set(yamlfile.Title, Title)
-   //yamlfile.Title = Title
-   //yamlfile.Body  = Body
-   //yamlfile.State = State
-   //yamlfile.Locked = Locked
-   //yamlfile.Assignees = *Assignees
-   //yamlfile.Labels = *Labels
+   yamlfile.Title = "test for title"
+   yamlfile.Body  = "this is my issue8"
+   yamlfile.State = "open"
+   yamlfile.Locked = false
+   yamlfile.Assignees = []string{"zhangchl007"}
+   yamlfile.Labels = []string{"bug"}
 
    //viper.WriteConfig()
 
    // encode yaml again
+
    d, err := yaml.Marshal(&yamlfile)
    if err != nil {
       log.Fatalf("error: %v", err)
@@ -156,10 +162,9 @@ func TestMoveFile(t *testing.T) {
 }
 
 func TestUpdateIssues(t *testing.T) {
-
-    s := [...]string{"GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"}
+    _, PersonalAccessToken, _ := GetUserinfo()
+    s := [...]string{"GET", "POST", "PUT", "DELETE", "PATCH"}
     for _, Action := range s {
-        PersonalAccessToken := "xxxxxxxxxxxxxxxxxxx"
         URL := "https://api.github.com/repos/zhangchl007/test/issues"
         data := []byte(`{"assignees":[],"body":"speed up golang development","labels":["bug"],"locked":false,"state":"open","title":"this issue7"}`)
         req, err := http.NewRequest(Action, URL, bytes.NewBuffer(data))

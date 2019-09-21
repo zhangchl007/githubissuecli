@@ -1,9 +1,10 @@
 package github
 import (
     "fmt"
-    "log"
     "github.com/fsnotify/fsnotify"
     "github.com/spf13/viper"
+    "log"
+    "os"
 )
 
 func UpdateUserinfo(id, idtoken, idrepo string) {
@@ -28,8 +29,9 @@ func UpdateUserinfo(id, idtoken, idrepo string) {
 
 func GetUserinfo()(string,string,string) {
 //    var s []string
+    GOPATH := os.Getenv("GOPATH")
     ConfigTemplate :="config"
-    ConfigPath  :="src/github.com/zhangchl007/githubissuecli/config/"
+    ConfigPath  := GOPATH + "/src/github.com/zhangchl007/githubissuecli/config/"
     viper.SetConfigName(ConfigTemplate)
     viper.AddConfigPath(ConfigPath)
     err := viper.ReadInConfig()
