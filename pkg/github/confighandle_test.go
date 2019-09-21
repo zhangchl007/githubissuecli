@@ -4,6 +4,7 @@ import (
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
 	"log"
+	"os"
 	"testing"
 )
 
@@ -11,9 +12,12 @@ func TestUpdateUserinfo(t *testing.T) {
 	id := "zhangchl007"
 	idtoken := "xxxxxxxxxxxxx"
 	idrepo := "test"
+	GOPATH := os.Getenv("GOPATH")
+	ConfigPath  := GOPATH + "/src/github.com/zhangchl007/githubissuecli/config"
 
     ConfigTemplate :="config"
-    ConfigPath  :="src/github.com/zhangchl007/githubissuecli/config/"
+    //ConfigPath  :="../../config"
+
     viper.SetConfigName(ConfigTemplate)
     viper.AddConfigPath(ConfigPath)
     err := viper.ReadInConfig()
@@ -32,8 +36,9 @@ func TestUpdateUserinfo(t *testing.T) {
 }
 
 func TestGetUserinfo(t *testing.T) {
+	GOPATH := os.Getenv("GOPATH")
     ConfigTemplate :="config"
-    ConfigPath  :="src/github.com/zhangchl007/githubissuecli/config/"
+    ConfigPath  := GOPATH + "/src/github.com/zhangchl007/githubissuecli/config"
     viper.SetConfigName(ConfigTemplate)
     viper.AddConfigPath(ConfigPath)
     err := viper.ReadInConfig()

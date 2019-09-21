@@ -85,15 +85,15 @@ func TestUpdateIssueyaml(t *testing.T){
         {
             Title: "this is issue8",
             Body:  "this is my issue, Please take care of it",
-            Assignees: []string{ "jerry yang" },
+            Assignees: []string{ "zhangchl007" },
             State: "open",
             Locked: false,
             Labels: []string{ "bug" },
         },
     }
-    tmpfile := "/tmp/a.txt"
+    tmpfile := "/tmp/a.test"
     IssueTemplate :="issue_template"
-    IssueyamlPath  :="src/github.com/zhangchl007/githubissuecli/config/"
+    IssueyamlPath  :="../../config/"
     TemplateFile := IssueyamlPath + IssueTemplate + ".yaml"
     viper.SetConfigName(IssueTemplate)
     viper.AddConfigPath(IssueyamlPath)

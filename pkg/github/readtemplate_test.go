@@ -1,15 +1,17 @@
 package github
+
 import (
 	"fmt"
 	y2j "github.com/ghodss/yaml"
 	"io/ioutil"
 	"log"
+	"os"
 	"testing"
 )
 
 func TestReadTemplate(t *testing.T) {
-
-	Filepath := "src/github.com/zhangchl007/githubissuecli/config/issue_template.yaml"
+    GOPATH := os.Getenv("GOPATH")
+	Filepath := GOPATH + "/src/github.com/zhangchl007/githubissuecli/config/issue_template.yaml"
 	content, err := ioutil.ReadFile(Filepath)
 	if err != nil {
 		log.Fatal(err)
