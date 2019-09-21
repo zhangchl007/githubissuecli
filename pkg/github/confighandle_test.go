@@ -15,7 +15,7 @@ func TestUpdateUserinfo(t *testing.T) {
 	GOPATH := os.Getenv("GOPATH")
 	ConfigPath  := GOPATH + "/src/github.com/zhangchl007/githubissuecli/config"
 
-    ConfigTemplate :="config"
+    ConfigTemplate :="test"
     //ConfigPath  :="../../config"
 
     viper.SetConfigName(ConfigTemplate)

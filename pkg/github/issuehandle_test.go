@@ -98,7 +98,8 @@ func (yamlfile *Issueyamlfile)TestUpdateIssueyaml(t *testing.T){
 
     tmpfile := "/tmp/a.test"
     IssueTemplate :="issue_template"
-    IssueyamlPath  :="../../config/"
+    GOPATH := os.Getenv("GOPATH")
+    IssueyamlPath  := GOPATH + "/src/github.com/zhangchl007/githubissuecli/config/"
     TemplateFile := IssueyamlPath + IssueTemplate + ".yaml"
     viper.SetConfigName(IssueTemplate)
     viper.AddConfigPath(IssueyamlPath)

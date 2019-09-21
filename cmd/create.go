@@ -26,8 +26,8 @@ which will be improving continiously as the awesome tool!`,
 }
 
 func init() {
-    createCmd.Flags().StringVarP(&Title, "Title", "t", "my issue", "The subject of your issue")
-    createCmd.Flags().StringVarP(&Body, "Body", "b", "This is my issue", "The discription of your issue")
+    createCmd.Flags().StringVarP(&Title, "Title", "t", "my issuexx", "The subject of your issue")
+    createCmd.Flags().StringVarP(&Body, "Body", "b", "This is my issuexx", "The discription of your issue")
     createCmd.Flags().StringVarP(&State, "State", "s", "open", "The issue openning status")
     createCmd.Flags().BoolVarP(&Locked, "Locked", "l", false, "The issue locking status")
     createCmd.Flags().StringVarP(&Owner, "Owner", "u", "", "The issue owner")

@@ -9,10 +9,12 @@ import (
     "time"
     "net/http"
     y2j "github.com/ghodss/yaml"
+    "github.com/spf13/viper"
     yaml "gopkg.in/yaml.v2"
 )
 
 func GetIssues(PersonalAccessToken, URL, Action string) (*[]Issues, error) {
+    //url := IssuesURL + Userid + "/" + Repo + "/" + "issues?state=all"
     req, err := http.NewRequest(Action, URL,  nil)
     if err != nil {
         log.Fatal("Error reading request.")
@@ -44,26 +46,30 @@ func GetIssues(PersonalAccessToken, URL, Action string) (*[]Issues, error) {
 }
 
 func (yamlfile *Issueyamlfile) UpdateIssueyaml(Title, Body, State string, Locked bool, Assignees, Labels *[]string) (*[]byte, string, bool){
-    tmpfile := "/tmp/a.test"
-    IssueTemplate :="issue_template.yaml"
-    GOPATH := os.Getenv("GOPATH")
-    IssueyamlPath  := GOPATH + "/src/github.com/zhangchl007/githubissuecli/config/"
-    TemplateFile := IssueyamlPath + IssueTemplate
-    content, err := ioutil.ReadFile(TemplateFile)
+    tmpfile := "/tmp/a.txt"
+    IssueTemplate :="issue_template"
+    IssueyamlPath  :="src/github.com/zhangchl007/githubissuecli/config/"
+    TemplateFile := IssueyamlPath + IssueTemplate + ".yaml"
+    viper.SetConfigName(IssueTemplate)
+    viper.AddConfigPath(IssueyamlPath)
+    err := viper.ReadInConfig()
     if err != nil {
         log.Fatal(err)
     }
-   // struc Unmasrshal
-   err = yaml.Unmarshal(content, &yamlfile)
-   if err != nil {
-     panic(err)
-   }
+
+    err = viper.Unmarshal(&yamlfile)
+    if err != nil{
+       log.Fatalf("unable to decode into struct, %v", err)
+    }
+   //viper.Set(yamlfile.Title, Title)
    yamlfile.Title = Title
    yamlfile.Body  = Body
    yamlfile.State = State
    yamlfile.Locked = Locked
    yamlfile.Assignees = *Assignees
    yamlfile.Labels = *Labels
+
+   //viper.WriteConfig()
 
    // encode yaml again
    d, err := yaml.Marshal(&yamlfile)
@@ -101,6 +107,7 @@ func MoveFile(from,to string) {
 }
 
 func UpdateIssues(PersonalAccessToken,  URL, Action string, data *[]byte)(string) {
+    //url := IssuesURL + Userid + "/" + Repo + "/issues"
     req, err := http.NewRequest(Action, URL,  bytes.NewBuffer(*data))
     if err != nil {
         log.Fatal("Error reading request.")

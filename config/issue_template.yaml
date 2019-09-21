@@ -1,8 +1,8 @@
-- title: this is issue8
-  body: this is my issue, Please take care of it
-  assignees:
-  - zhangchl007
-  state: open
-  locked: false
-  labels:
-  - bug
+title: my issuexxx
+body: this is my issue,Please take care of it
+assignees:
+- ""
+state: open
+locked: false
+labels:
+- bug

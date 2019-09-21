@@ -9,7 +9,8 @@ import (
 
 func UpdateUserinfo(id, idtoken, idrepo string) {
     ConfigTemplate :="config"
-    ConfigPath  :="src/github.com/zhangchl007/githubissuecli/config/"
+    GOPATH := os.Getenv("GOPATH")
+    ConfigPath  := GOPATH + "/src/github.com/zhangchl007/githubissuecli/config/"
     viper.SetConfigName(ConfigTemplate)
     viper.AddConfigPath(ConfigPath)
     err := viper.ReadInConfig()
