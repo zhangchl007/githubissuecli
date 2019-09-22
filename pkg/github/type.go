@@ -2,6 +2,8 @@ package github
 import "time"
 const (
         IssuesURL = "https://api.github.com/repos/"
+        ReposURL = "https://api.github.com/user/repos"
+        UserReposURL = "https://api.github.com/repos/"
         MethodGet     = "GET"
         MethodHead    = "HEAD"
         MethodPost    = "POST"
@@ -45,4 +47,24 @@ type Userinfo struct {
 	Userid   string   `yaml:"userid"`
 	Token    string   `yaml:"token"`
 	Repo     string   `yaml:"repo"`
+}
+
+type Repos struct {
+    ID   int   `json:"id"`
+    Name string  `json:"name"`
+    Private bool  `json:"private"`
+    Owner   Owner
+    HTMLURL string `json:"html_url"`
+    Description string `json:"description"`
+    Homepage string `json:"homepage"`
+    Fork  bool
+    Teamurl string `json:"team_url"`
+    CreateAt time.Time `json:"created_at"`
+    Forks int `json:"forks"`
+    Openissues int `json:"open_issues"`
+    Language string `json:"language"`
+}
+
+type Owner struct {
+    Login string `json:"login"`
 }

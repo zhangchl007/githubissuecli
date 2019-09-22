@@ -111,7 +111,7 @@ func UpdateIssues(PersonalAccessToken,  URL, Action string, data *[]byte)(string
 	//cookie := http.Cookie{Name: "cookie_name", Value: "cookie_value"}
 	//req.AddCookie(&cookie)
 	// Set client timeout
-	client := &http.Client{Timeout: time.Second * 10}
+	client := &http.Client{Timeout: time.Second * 20}
     //Send req using http Client
     resp, err := client.Do(req)
     if err != nil {

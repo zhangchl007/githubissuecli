@@ -9,7 +9,6 @@ func Parsehttpurl(Filepath, State, IssueNumber string, Locked bool) (string, str
     Userid, PersonalAccessToken, Repo := GetUserinfo()
     if State =="open" && Locked == false {
         url = IssuesURL + Userid + "/" + Repo + "/issues"
-        fmt.Println(url)
         Action = MethodPost
         data = ReadTemplate(Filepath)
     } else if Filepath == "" {

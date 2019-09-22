@@ -1,27 +1,27 @@
-package github
+package repos
 import (
     "encoding/json"
-    "bytes"
-    "fmt"
+    "github.com/zhangchl007/githubissuecli/pkg/github"
     "os"
     "io/ioutil"
-    "log"
+    "bytes"
+    "fmt"
     "time"
+    "log"
     "net/http"
     y2j "github.com/ghodss/yaml"
-    "github.com/spf13/viper"
     yaml "gopkg.in/yaml.v2"
+
 )
 
-func GetIssues(PersonalAccessToken, URL, Action string) (*[]Issues, error) {
-    //url := IssuesURL + Userid + "/" + Repo + "/" + "issues?state=all"
+func GetRepos(PersonalAccessToken, URL, Action string) (*[]github.Repos, error) {
     req, err := http.NewRequest(Action, URL,  nil)
     if err != nil {
         log.Fatal("Error reading request.")
     }
     req.Header.Add("Authorization", "Bearer " + PersonalAccessToken)
     //req.Header.Add("User-Agent","Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36")
-    //req.Header.Add("Content-Type","application/json")
+    req.Header.Add("Content-Type","application/json")
     client := &http.Client{}
     //Send req using http Client
     resp, err := client.Do(req)
@@ -34,7 +34,7 @@ func GetIssues(PersonalAccessToken, URL, Action string) (*[]Issues, error) {
         return nil, fmt.Errorf("search query failed: %s", resp.Status)
     }
 
-    var result []Issues
+    var result []github.Repos
 
     if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
         resp.Body.Close()
@@ -45,31 +45,25 @@ func GetIssues(PersonalAccessToken, URL, Action string) (*[]Issues, error) {
     return &result, nil
 }
 
-func (yamlfile *Issueyamlfile) UpdateIssueyaml(Title, Body, State string, Locked bool, Assignees, Labels *[]string) (*[]byte, string, bool){
-    tmpfile := "/tmp/a.txt"
-    IssueTemplate :="issue_template"
-    IssueyamlPath  :="src/github.com/zhangchl007/githubissuecli/config/"
-    TemplateFile := IssueyamlPath + IssueTemplate + ".yaml"
-    viper.SetConfigName(IssueTemplate)
-    viper.AddConfigPath(IssueyamlPath)
-    err := viper.ReadInConfig()
+func (yamlfile *Repoyamlfile) UpdateRepoyaml(Name, Description, Homepage string, Private bool) (*[]byte){
+    tmpfile := "/tmp/b.test"
+    RepoTemplate := "repo_template.yaml"
+    GOPATH := os.Getenv("GOPATH")
+    RepoyamlPath  := GOPATH + "/src/github.com/zhangchl007/githubissuecli/config/"
+    TemplateFile := RepoyamlPath + RepoTemplate
+    content, err := ioutil.ReadFile(TemplateFile)
     if err != nil {
         log.Fatal(err)
     }
-
-    err = viper.Unmarshal(&yamlfile)
-    if err != nil{
-       log.Fatalf("unable to decode into struct, %v", err)
-    }
-   //viper.Set(yamlfile.Title, Title)
-   yamlfile.Title = Title
-   yamlfile.Body  = Body
-   yamlfile.State = State
-   yamlfile.Locked = Locked
-   yamlfile.Assignees = *Assignees
-   yamlfile.Labels = *Labels
-
-   //viper.WriteConfig()
+   // struc Unmasrshal
+   err = yaml.Unmarshal(content, &yamlfile)
+   if err != nil {
+     panic(err)
+   }
+   yamlfile.Name = Name
+   yamlfile.Description  = Description
+   yamlfile.Homepage = Homepage
+   yamlfile.Private = Private
 
    // encode yaml again
    d, err := yaml.Marshal(&yamlfile)
@@ -78,7 +72,7 @@ func (yamlfile *Issueyamlfile) UpdateIssueyaml(Title, Body, State string, Locked
    }
    WriteToFile(tmpfile, d)
    MoveFile(tmpfile, TemplateFile)
-   fmt.Printf("The yaml file of issue template: %s had been created/updated succesfully!\n",TemplateFile)
+   fmt.Printf("The yaml file of repo template: %s had been created/updated succesfully!\n",TemplateFile)
    //yaml to json for issue creation
    y2 := []byte(string(d))
    j2, err := y2j.YAMLToJSON(y2)
@@ -87,7 +81,7 @@ func (yamlfile *Issueyamlfile) UpdateIssueyaml(Title, Body, State string, Locked
     }
    //fmt.Println(string(j2))
 
-   return &j2, State, Locked
+   return &j2
 }
 
 // generate the tempfile for yamlfile
@@ -106,8 +100,7 @@ func MoveFile(from,to string) {
 	}
 }
 
-func UpdateIssues(PersonalAccessToken,  URL, Action string, data *[]byte)(string) {
-    //url := IssuesURL + Userid + "/" + Repo + "/issues"
+func UpdateRepos(PersonalAccessToken,  URL, Action string, data *[]byte)(string) {
     req, err := http.NewRequest(Action, URL,  bytes.NewBuffer(*data))
     if err != nil {
         log.Fatal("Error reading request.")
@@ -118,7 +111,7 @@ func UpdateIssues(PersonalAccessToken,  URL, Action string, data *[]byte)(string
 	//cookie := http.Cookie{Name: "cookie_name", Value: "cookie_value"}
 	//req.AddCookie(&cookie)
 	// Set client timeout
-	client := &http.Client{Timeout: time.Second * 10}
+	client := &http.Client{Timeout: time.Second * 20}
     //Send req using http Client
     resp, err := client.Do(req)
     if err != nil {
@@ -127,12 +120,10 @@ func UpdateIssues(PersonalAccessToken,  URL, Action string, data *[]byte)(string
 
     if resp.StatusCode != http.StatusOK {
         resp.Body.Close()
-        fmt.Errorf("The issue is failed to create!: %s", resp.Status)
+        fmt.Errorf("The repo is failed to create!: %s", resp.Status)
     }
     defer resp.Body.Close()
     //fmt.Println("response Status:", resp.Status)
 	//fmt.Println("response Headers:", resp.Header)
     return resp.Status
-
 }
-

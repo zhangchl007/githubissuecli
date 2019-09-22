@@ -16,7 +16,7 @@ func ReadTemplate(Filepath string)([]byte) {
     if err != nil {
        fmt.Printf("err: %v\n", err)
     }
-	fmt.Printf("The post json contents: %s\n", j2)
+	fmt.Println("The post json contents")
     return j2
 }
 
