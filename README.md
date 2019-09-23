@@ -2,6 +2,13 @@
 which will be improving continiously as the awesome tool!
 
 ```
+# go get -u github.com/zhangchl007/githubissuecli
+
+# go build -o bin/gcli  src/github.com/zhangchl007/githubissuecli/main.go
+
+# ls -l $GOPATH/bin/gcli
+-rwxr-xr-x 1 jimmy szadmin 12498549 9月  23 07:19 /home/jimmy/Downloads/go/bin/gcli
+
 #Set userinfo
 gcli set  -u username -t token -r repo
 
