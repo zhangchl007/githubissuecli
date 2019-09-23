@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"fmt"
 	"github.com/zhangchl007/githubissuecli/pkg/github"
 	"github.com/spf13/cobra"
 )
@@ -15,7 +14,6 @@ var setCmd = &cobra.Command{
 which will be improving continiously as the awesome tool!`,
 	Run: func(cmd *cobra.Command, args []string) {
          github.UpdateUserinfo(userid, token, repo)
-         fmt.Println("The Userinfo config file had been changed successfully!")
 	},
 }
 

@@ -19,6 +19,7 @@ gcli get repos/issues
 
 #create repo and issue
 gcli create repo -n "test01"/issue
+gcli create issue
 
 #update repo and issue
 gcli update repo -n test01 -d "this is my repo update, take care of it"

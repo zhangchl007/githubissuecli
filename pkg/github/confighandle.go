@@ -22,6 +22,7 @@ func UpdateUserinfo(id, idtoken, idrepo string) {
    viper.Set("token", idtoken)
    viper.Set("repo", idrepo)
    viper.WriteConfig()
+   fmt.Printf("The Userinfo config file: %s had been changed successfully!\n", ConfigPath + ConfigTemplate + ".yaml")
    viper.WatchConfig()
    viper.OnConfigChange(func(e fsnotify.Event) {
    fmt.Println("配置发生变更：", e.Name)

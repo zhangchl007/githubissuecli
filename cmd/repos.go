@@ -14,7 +14,7 @@ var getreposCmd = &cobra.Command{
 	Long: `Get user repositories, gcli is a CLI tool for Github repositories and issues management,
 which will be improving continiously as the awesome tool!`,
 	Run: func(cmd *cobra.Command, args []string) {
-        PersonalAccessToken, URL, Action, _ := repos.Parsehttpurl("", "GET","null")
+        PersonalAccessToken, URL, Action, _ := repos.Parsehttpurl("GET","null")
         f, err := repos.GetRepos(PersonalAccessToken, URL, Action)
         if err != nil {
 		    log.Fatalln(err)
@@ -34,8 +34,8 @@ var createrepoCmd = &cobra.Command{
 which will be improving continiously as the awesome tool`,
     //Args: cobra.MinimumNArgs(1),
     Run: func(cmd *cobra.Command, args []string) {
-        Filepath := "src/github.com/zhangchl007/githubissuecli/config/repo_template.yaml"
-        PersonalAccessToken, URL, Action, Data := repos.Parsehttpurl(Filepath, "POST", Name)
+        //Filepath := "src/github.com/zhangchl007/githubissuecli/config/repo_template.yaml"
+        PersonalAccessToken, URL, Action, Data := repos.Parsehttpurl("POST", Name)
         okay := repos.UpdateRepos(PersonalAccessToken, URL, Action, Data)
         fmt.Println(okay)
     },
@@ -49,8 +49,7 @@ which will be improving continiously as the awesome tool`,
     //Args: cobra.MinimumNArgs(1),
     Run: func(cmd *cobra.Command, args []string) {
         var  yamlfile *repos.Repoyamlfile
-        Filepath := "src/github.com/zhangchl007/githubissuecli/config/repo_template.yaml"
-        PersonalAccessToken, URL, Action, _ := repos.Parsehttpurl(Filepath, "PATCH", Name)
+        PersonalAccessToken, URL, Action, _ := repos.Parsehttpurl("PATCH", Name)
         Data := yamlfile.UpdateRepoyaml(Name, Description, Homepage, Private)
         okay := repos.UpdateRepos(PersonalAccessToken, URL, Action, Data)
         fmt.Println(okay)
@@ -64,8 +63,7 @@ var lockrepoCmd = &cobra.Command{
 which will be improving continiously as the awesome tool`,
     //Args: cobra.MinimumNArgs(1),
     Run: func(cmd *cobra.Command, args []string) {
-        Filepath := "src/github.com/zhangchl007/githubissuecli/config/repo_template.yaml"
-        PersonalAccessToken, URL, Action, Data := repos.Parsehttpurl(Filepath, "lock", Name)
+        PersonalAccessToken, URL, Action, Data := repos.Parsehttpurl("lock", Name)
         okay := repos.UpdateRepos(PersonalAccessToken, URL, Action, Data)
         fmt.Println(okay)
     },
@@ -78,8 +76,7 @@ var unlockrepoCmd = &cobra.Command{
 which will be improving continiously as the awesome tool`,
     //Args: cobra.MinimumNArgs(1),
     Run: func(cmd *cobra.Command, args []string) {
-        Filepath := "src/github.com/zhangchl007/githubissuecli/config/repo_template.yaml"
-        PersonalAccessToken, URL, Action, Data := repos.Parsehttpurl(Filepath, "unlock", Name)
+        PersonalAccessToken, URL, Action, Data := repos.Parsehttpurl("unlock", Name)
         okay := repos.UpdateRepos(PersonalAccessToken, URL, Action, Data)
         fmt.Println(okay)
     },
@@ -92,8 +89,7 @@ var deleterepoCmd = &cobra.Command{
 which will be improving continiously as the awesome tool`,
     //Args: cobra.MinimumNArgs(1),
     Run: func(cmd *cobra.Command, args []string) {
-        Filepath := "src/github.com/zhangchl007/githubissuecli/config/repo_template.yaml"
-        PersonalAccessToken, URL, Action, Data := repos.Parsehttpurl(Filepath, "DELETE", Name)
+        PersonalAccessToken, URL, Action, Data := repos.Parsehttpurl("DELETE", Name)
         okay := repos.UpdateRepos(PersonalAccessToken, URL, Action, Data)
         fmt.Println(okay)
     },

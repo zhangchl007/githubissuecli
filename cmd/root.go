@@ -1,5 +1,5 @@
 /*
-Copyright © 2019 NAME HERE <EMAIL ADDRESS>
+Copyright © 2019 Jimmy Zhang <zhang.arthur@gmail.com>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -37,7 +37,9 @@ var rootCmd = &cobra.Command{
 which will be improving continiously as the awesome tool!`,
   // Uncomment the following line if your bare application
   // has an action associated with it:
-  //	Run: func(cmd *cobra.Command, args []string) { },
+ /* 	Run: func(cmd *cobra.Command, args []string) {
+        Usage()
+    },*/
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

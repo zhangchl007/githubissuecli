@@ -5,7 +5,7 @@ import (
     "github.com/zhangchl007/githubissuecli/pkg/github"
 )
 
-func Parsehttpurl(Filepath, Action, Repo string) (string, string, string, *[]byte) {
+func Parsehttpurl(Action, Repo string) (string, string, string, *[]byte) {
     var URL string
     var Data []byte
     Userid, PersonalAccessToken, _ := github.GetUserinfo()
@@ -19,7 +19,6 @@ func Parsehttpurl(Filepath, Action, Repo string) (string, string, string, *[]byt
         Data = re.ReplaceAll(Data, []byte(Repo))
     } else if Action == github.MethodPatch {
         URL = github.UserReposURL + Userid + "/" + Repo
-        //Data = github.ReadTemplate(Filepath)
     } else if Action == "lock"{
         URL = github.UserReposURL + Userid + "/" + Repo
         Action = github.MethodPatch
