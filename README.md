@@ -92,7 +92,7 @@ gcli delete repo -n test01
 
 - [ ] Repo and Issue Batch managment: currently, `gcli` only provide the basic operation of github repo and issue.
 - [ ] Multi authentication way of github: currently, `gcli` is only sample authentication way by github token.
-- [ ] More funture extension
+- [ ] More feature extension
 - [ ] e2e tests
 
 If you are interested in any of the above features, please file an issue to avoid potential duplication.
