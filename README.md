@@ -33,6 +33,20 @@ The yaml file of repo template
  private: false
 
 ```
+The yaml file of issue template
+
+```
+#cat src/github.com/zhangchl007/githubissuecli/config/issue_template.yaml 
+title: my issuexx
+body: This is my issuexx
+assignees:
+- ""
+state: open
+locked: false
+labels:
+- bug
+
+```
 # Basic Commands
 
 ```
