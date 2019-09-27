@@ -21,6 +21,6 @@ func TestReadTemplate(t *testing.T) {
     if err != nil {
        fmt.Printf("err: %v\n", err)
     }
-	fmt.Println("The post json contents")
+	fmt.Println("The post json contents",j2)
 }
 

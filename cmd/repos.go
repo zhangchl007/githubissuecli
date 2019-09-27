@@ -21,7 +21,7 @@ which will be improving continiously as the awesome tool!`,
 	    }
         fmt.Println("-------------Reponame-------------", "-Createtime-", "--Owner--", "-Private-", "-Openissues-", "---------Description-----------")
         for _, item := range *f {
-            fmt.Printf("%-35s %5.10s %12s %.8t %5d %-12s\n", item.Name, item.CreateAt, item.Owner.Login, item.Private, item.Openissues, item.Description)
+            fmt.Printf("%-35s %5.10s %12s %t %5d %-12s\n", item.Name, item.CreateAt, item.Owner.Login, item.Private, item.Openissues, item.Description)
         }
 
 	},
