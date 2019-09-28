@@ -125,7 +125,11 @@ func UpdateIssues(PersonalAccessToken, URL, Action string, data *[]byte) string 
 
 	if resp.StatusCode != http.StatusOK {
 		resp.Body.Close()
-		fmt.Errorf("The issue is failed to create!: %s", resp.Status)
+		err := fmt.Errorf("The issue is failed to create!: %s", resp.Status)
+		if err != nil {
+			fmt.Print(err)
+		}
+
 	}
 	defer resp.Body.Close()
 	//fmt.Println("response Status:", resp.Status)
